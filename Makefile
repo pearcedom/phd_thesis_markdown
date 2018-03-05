@@ -1,9 +1,8 @@
-PY=python3
 PANDOC=pandoc
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/source
-OUTPUTDIR=$(BASEDIR)/output
+INPUTDIR=$(BASEDIR)/src/md
+OUTPUTDIR=$(BASEDIR)/doc
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
 
@@ -26,7 +25,7 @@ help:
 
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis-B.pdf" \
+	-o "$(OUTPUTDIR)/thesis.pdf" \
 	--latex-engine=xelatex \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
