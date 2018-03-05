@@ -21,7 +21,6 @@ if mood == 'happy':
 ```
 
 Alternatively, you can also use LaTeX to create a code block as shown in the Java example below:
-\lstinputlisting[style=javaCodeStyle, caption=Main.java]{source/code/HelloWorld.java}
 
 If you use `javaCodeStyle` as defined in the `preamble.tex`, it is best to keep the maximum line length in the source code at 80 characters.
 

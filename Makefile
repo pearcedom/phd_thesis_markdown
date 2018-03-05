@@ -1,4 +1,4 @@
-PY=python
+PY=python3
 PANDOC=pandoc
 
 BASEDIR=$(CURDIR)
@@ -26,7 +26,8 @@ help:
 
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.pdf" \
+	-o "$(OUTPUTDIR)/thesis-B.pdf" \
+	--latex-engine=xelatex \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
@@ -36,7 +37,6 @@ pdf:
 	-V papersize=a4paper \
 	-V documentclass=report \
 	-N \
-	--pdf-engine=xelatex \
 	--verbose
 
 tex:
